@@ -1,29 +1,10 @@
 ﻿let mapleader=','
 
 " Vim Plugged
-  call plug#begin('$HOME/vimfiles/plugged')
-    Plug 'chriskempson/base16-vim'
-    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'pangloss/vim-javascript'
-    Plug 'mxw/vim-jsx'
-    Plug 'elzr/vim-json'
-    Plug 'mattn/emmet-vim'
-    Plug 'godlygeek/tabular'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'w0rp/ale'
-    Plug 'kien/ctrlp.vim'
-    Plug 'vimwiki/vimwiki'
-    Plug 'tpope/vim-surround'
-    Plug 'Raimondi/delimitMate'
-    Plug 'othree/javascript-libraries-syntax.vim'
-    Plug 'darthmall/vim-vue'
-    Plug 'Valloric/YouCompleteMe'
-    Plug 'ap/vim-css-color'
-    Plug 'tpope/vim-fugitive'
-  call plug#end()
+" call plug#begin('$HOME/vimfiles/plugged')
+" call plug#end()
 
-runtime! C:\Program\ Files\ (x86)\Vim\vim80\macros\matchit.vim
+" runtime! C:\Program\ Files\ (x86)\Vim\vim80\macros\matchit.vim
 
 " Basic Settings
   set autoindent
@@ -75,58 +56,23 @@ runtime! C:\Program\ Files\ (x86)\Vim\vim80\macros\matchit.vim
   set diffopt+=context:3
   set wildignore+=*\\node_modules\\*,*\\bootstrap-*\\*,*\\jquery-*\\*
 
-" Emmet settings
-  let g:user_emmet_leader_key = ','
-
-" Ale settings
-  let g:ale_html_htmlhint_options = "--config=C:/Users/jodden/.htmlhintrc --format=unix"
-  "let g:ale_lint_on_text_changed = 'never'
-
-" NERDTree
-  let NERDTreeMinimalUI=1
-
-" Vim-jsx
-  let g:jsx_ext_required = 1
-
-" YCM Settings
-  "let g:ycm_autoclose_preview_window_after_completion = 1
-  let g:ycm_min_num_of_chars_for_completion = 1
-
-" Javascript plugin values
-  let g:javascript_plugin_jsdoc = 1
-
-" JS Lib settings
-  let g:used_javascript_libs = 'underscore,jquery,vue,d3,jest'
-
-" Airline settings
-  let g:airline#extensions#whitespace#enabled = 0
-
-" Indent Settings
-  let g:html_indet_inctags = "html,body,head,tbody,div,article,section,footer,main,ul"
-  let g:html_indet_autotags = "p,span,th,td,tr,tfoot,thead"
-  let g:html_indent_script1 = "inc"
-  let g:html_indent_style1 = "inc"
-
 " Vimwiki settings
-  let g:vimwiki_url_maxsave = 0
-  let g:vimwiki_ext2synatx = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-  let work_wiki = {}
-  let work_wiki.path = '~/Dropbox/work-wiki/'
-  let work_wiki.path_html = '~/Dropbox/work-wiki-html/'
-  let work_wiki.diary_rel_path = 'log/'
-  let work_wiki.syntax = 'markdown'
-  let work_wiki.ext = '.md'
-  let private_wiki = {}
-  let private_wiki.path = '~/Dropbox/private-wiki/'
-  let private_wiki.path_html = '~/Dropbox/private-wiki-html/'
-  let private_wiki.diary_rel_path = 'diary/'
-  let private_wiki.syntax = 'markdown'
-  let private_wiki.ext = '.md'
-  let g:vimwiki_list = [work_wiki, private_wiki]
-  let g:vimwiki_global_ext = 0
-
-" Markdown Plugin settings
-  let g:vim_markdown_folding_disabled = 1
+  " let g:vimwiki_url_maxsave = 0
+  " let g:vimwiki_ext2synatx = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+  " let work_wiki = {}
+  " let work_wiki.path = '~/Dropbox/work-wiki/'
+  " let work_wiki.path_html = '~/Dropbox/work-wiki-html/'
+  " let work_wiki.diary_rel_path = 'log/'
+  " let work_wiki.syntax = 'markdown'
+  " let work_wiki.ext = '.md'
+  " let private_wiki = {}
+  " let private_wiki.path = '~/Dropbox/private-wiki/'
+  " let private_wiki.path_html = '~/Dropbox/private-wiki-html/'
+  " let private_wiki.diary_rel_path = 'diary/'
+  " let private_wiki.syntax = 'markdown'
+  " let private_wiki.ext = '.md'
+  " let g:vimwiki_list = [work_wiki, private_wiki]
+  " let g:vimwiki_global_ext = 0
 
 " Custom mappings
   nno <left> <nop>
@@ -138,22 +84,12 @@ runtime! C:\Program\ Files\ (x86)\Vim\vim80\macros\matchit.vim
   ino <up> <nop>
   ino <down> <nop>
   nno <C-V> <C-V>
-  nno <leader>pi :PlugInstall<cr><C-L>
-  nno <leader>pu :PlugUpdate<cr><C-L>
-  nno <C-n><C-t> :NERDTreeToggle<cr>
-  ino <C-n><C-t> <esc>:NERDTreeToggle<cr><C-w><C-l>a
-  nno <leader>cd :colorscheme base16-material-darker<cr>
-  nno <leader>cl :colorscheme base16-solarized-light<cr>
-  " builds tags based on the current set working directory
-  nno <leader>bt :execute 'silent !build_ctags.bat' '"'.getcwd().'"'<cr>
-  nno <leader>wha :VimwikiAll2HTML<cr>
-  nno <leader>ss :set spell!<cr>
-  "nno <leader>so :syntax on<cr>
-  nno <leader>c mvggvG$h"*y`v
-  "nno <leader>px :%s!>!>!g <bar> :set filetype=xml <bar> =ggGddgg
+  " nno <leader>pi :PlugInstall<cr><C-L>
+  " nno <leader>pu :PlugUpdate<cr><C-L>
+  " nno <C-n><C-t> :NERDTreeToggle<cr>
+  " ino <C-n><C-t> <esc>:NERDTreeToggle<cr><C-w><C-l>a
   nno <leader>ns <C-w><C-v>:enew <bar> setlocal buftype=nofile <bar> setlocal bufhidden=hide <bar> setlocal noswapfile <bar> setlocal nobuflisted<cr>
-  nno <leader>tc :VimwikiTOC<cr>
-  vno <leader>c :Tab /,\zs<cr>
+  " nno <leader>tc :VimwikiTOC<cr>
   nno G Gzz
   nno } }zz
   nno { {zz
@@ -161,20 +97,6 @@ runtime! C:\Program\ Files\ (x86)\Vim\vim80\macros\matchit.vim
   nno n nzzzv
   nno * *zzzv
   nno # #zzzv
-
-" Custom Functions
-  function! SynStack()
-    if !exists("*synstack")
-      return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-  endfunc
-
-" Color scheme
-  colorscheme base16-monokai
-  "colorscheme base16-tomorrow-night
-  "colorscheme base16-material-darker
-  let g:airline_theme = 'base16_monokai'
 
 " Set thing near the end in case of other plugins changing settings
   filetype plugin indent on
